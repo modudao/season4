@@ -158,7 +158,7 @@ function Membership() {
         <div className='membership-body-wrapper'>
           <div className='membership-body-text'>맴버십을 구매하세요</div>
           <img className='modu-nft-image' style={{ width: 259, height: 259 }} src={daolabnft} />
-          <div className='membership-body-text-sub'>2024 다오랩 2기 마무리를 기념하기 위한 NFT 카드입니다. 이 NFT는 양도가 불가능한 SBT입니다.</div>
+          <div className='membership-body-text-sub'>2024 다오랩 3기 시작을 기념하기 위한 NFT 카드입니다. 이 NFT는 양도가 불가능한 SBT입니다.</div>
           <div className='membership-body-text-sub2'>*가격: 10 KLAY</div>
           <button className='membership-button' onClick={mintNFT}>
             <div className='faucet-button-text'>구매</div>
