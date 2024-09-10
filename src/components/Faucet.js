@@ -20,7 +20,7 @@ const Faucet = () => {
       const postParams = { "username": userName, "useraddress": storedAddress };
       console.log("postParams", postParams);
 
-      axios.post('https://yskpecha3j.execute-api.ap-northeast-2.amazonaws.com/tt', postParams)
+      axios.post('https://ib9fm6yjjg.execute-api.ap-northeast-2.amazonaws.com/ctp/md-user', postParams)
         .then(response => {
           console.log('Success:', response.data);
         })
