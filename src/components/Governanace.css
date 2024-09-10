@@ -38,7 +38,7 @@
 }
 
 .gov-title-sub3 {
-  color: #9C784A;
+  color: #2C71D2;
   font-feature-settings: 'dlig' on;
   font-family: "Work Sans";
   font-size: 14px;
@@ -62,7 +62,7 @@
 }
 
 .gov-select-text2 {
-  color: #9C784A;
+  color: #000;
   font-feature-settings: 'dlig' on;
   font-family: "Work Sans";
   font-size: 12px;
@@ -82,7 +82,7 @@
 
   border-color: transparent;
   border-radius: 12px;
-  background: #FCFAF7;
+  background: #EAF5FF;
 }
 
 .gov-select-button2 {
@@ -95,7 +95,7 @@
 
   border-color: transparent;
   border-radius: 12px;
-  background: #F5EDE8;
+  background: #B2DCF9;
 }
 
 .gov-select-wrapper {
@@ -105,7 +105,7 @@
   margin-bottom: 20px;
 
   border-radius: 12px;
-  background: #F5EDE8;
+  background: #B2DCF9;
 }
 
 .gov-wrapper {
@@ -160,7 +160,7 @@
   gap: 10px;
 
   border-radius: 12px;
-  background: #FFF9F3;
+  background: #EAF5FF;
   border-color: transparent;
 }
 
@@ -176,7 +176,7 @@
 
   border-color: transparent;
   border-radius: 12px;
-  background: #F28F0D;
+  background: #38A0ED;
 }
 
 .gov-image-select-text {
@@ -204,7 +204,7 @@
   gap: 8px;
 }
 
-.gov-apply-button{
+.gov-apply-button {
   display: flex;
   width: 293px;
   height: 48px;
@@ -216,5 +216,5 @@
 
   border-color: transparent;
   border-radius: 12px;
-  background: #F28F0D;
+  background: #38A0ED;
 }
