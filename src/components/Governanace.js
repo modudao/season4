@@ -23,7 +23,7 @@ function Governanace() {
   const [joinRate, setJoinRate] = useState(0);
   const [winnerAmount, setWinnerAmount] = useState(0);
 
-  const nftAddress = "0x8aDfAA9C3ACaE1E519661C15aA1c05727b0387D2";
+  const nftAddress = "0x8BFe184A40A3b62d0f270578BA87886f55c1e98a";
   const voteAbi = '{"inputs": [{"internalType": "uint256","name": "option","type": "uint256"}],"name": "vote","outputs": [],"stateMutability": "nonpayable","type": "function"}';
   const joinAbi = '{"inputs": [],"name": "join","outputs": [],"stateMutability": "nonpayable","type": "function"}';
   const nftAbi = [{
@@ -58,7 +58,7 @@ function Governanace() {
       {
         "internalType": "uint256[4]",
         "name": "",
-        "type": "uint256[4]"
+        "type": "uint256[10]"
       }
     ],
     "stateMutability": "view",
@@ -193,11 +193,11 @@ function Governanace() {
   };
 
   const data = {
-    labels: ['사진1', '사진2', '사진3', '사진4'],
+    labels: ['사진1', '사진2', '사진3', '사진4', '사진5', '사진6', '사진7', '사진8', '사진9', '사진10'],
     datasets: [
       {
         data: voteData,
-        backgroundColor: ['blue', 'green', 'orange', 'red'],
+        backgroundColor: ['blue', 'yellow', 'green', 'orange', 'red', 'cyan', 'magenta', 'brown', 'purple', 'black'],
       },
     ],
   };
@@ -223,6 +223,18 @@ function Governanace() {
       params = '[2]';
     } else if (selectedImage == '사진4') {
       params = '[3]';
+    } else if (selectedImage == '사진5') {
+      params = '[4]';
+    } else if (selectedImage == '사진6') {
+      params = '[5]';
+    } else if (selectedImage == '사진7') {
+      params = '[6]';
+    } else if (selectedImage == '사진8') {
+      params = '[7]';
+    } else if (selectedImage == '사진9') {
+      params = '[8]';
+    } else if (selectedImage == '사진10') {
+      params = '[9]';
     }
 
     // Step 1: Prepare the contract action
@@ -356,12 +368,48 @@ function Governanace() {
                     <div className='gov-image-text'>사진4</div>
                   </div>
                 </div>
+                <div className='gov-image-wrapper'>
+                  <div className='gov-image-wrapper-sub'>
+                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season3/daolabnft5.png"} />
+                    <div className='gov-image-text'>사진5</div>
+                  </div>
+                  <div className='gov-image-wrapper-sub'>
+                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season3/daolabnft6.png"} />
+                    <div className='gov-image-text'>사진6</div>
+                  </div>
+                </div>
+                <div className='gov-image-wrapper'>
+                  <div className='gov-image-wrapper-sub'>
+                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season3/daolabnft7.png"} />
+                    <div className='gov-image-text'>사진7</div>
+                  </div>
+                  <div className='gov-image-wrapper-sub'>
+                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season3/daolabnft8.png"} />
+                    <div className='gov-image-text'>사진8</div>
+                  </div>
+                </div>
+                <div className='gov-image-wrapper'>
+                  <div className='gov-image-wrapper-sub'>
+                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season3/daolabnft9.png"} />
+                    <div className='gov-image-text'>사진9</div>
+                  </div>
+                  <div className='gov-image-wrapper-sub'>
+                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season3/daolabnft10.png"} />
+                    <div className='gov-image-text'>사진10</div>
+                  </div>
+                </div>
                 <div className='gov-image-select-wrapper'>
                   <select className='gov-image-select' value={selectedImage} onChange={handleChange}>
                     <option value='사진1'>사진1</option>
                     <option value='사진2'>사진2</option>
                     <option value='사진3'>사진3</option>
                     <option value='사진4'>사진4</option>
+                    <option value='사진5'>사진5</option>
+                    <option value='사진6'>사진6</option>
+                    <option value='사진7'>사진7</option>
+                    <option value='사진8'>사진8</option>
+                    <option value='사진9'>사진9</option>
+                    <option value='사진10'>사진10</option>
                   </select>
                   <button className='gov-image-select-button' onClick={voteImage}>
                     <div className='gov-image-select-text'>투표</div>
