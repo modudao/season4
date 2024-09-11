@@ -228,7 +228,7 @@ function Governanace() {
           }
         }
       } catch (error) {
-        console.error('Error checking membership status:', error);
+        // console.error('Error checking membership status:', error);
       }
     };
 

@@ -85,7 +85,7 @@ function Membership() {
           }
         }
       } catch (error) {
-        console.error('Error checking membership status:', error);
+        // console.error('Error checking membership status:', error);
       }
     };
 

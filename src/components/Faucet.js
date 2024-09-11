@@ -18,14 +18,14 @@ const Faucet = () => {
     const storedAddress = localStorage.getItem('klipAddress');
     if (storedAddress && userName != "") {
       const postParams = { "username": userName, "useraddress": storedAddress };
-      console.log("postParams", postParams);
+      // console.log("postParams", postParams);
 
       axios.post('https://ib9fm6yjjg.execute-api.ap-northeast-2.amazonaws.com/ctp/md-user', postParams)
         .then(response => {
-          console.log('Success:', response.data);
+          // console.log('Success:', response.data);
         })
         .catch(error => {
-          console.error('There was an error!', error);
+          // console.error('There was an error!', error);
         });
 
       setIsClaimed(true);
