@@ -39,7 +39,7 @@ const Chatbot = () => {
               챗봇과 대화하세요
             </div>
             <div className='chatbot-sub-text'>
-              모두 다오앱에 대해서 궁금한 점이 있나요? 언제든지 물어보세요!
+              모두다오 디앱에 대해서 궁금한 점이 있나요? 언제든지 물어보세요!
             </div>
             <div className='chatbot-sub-text2'>
               여러분의 질문에 빠르고 정확하게 답변할 준비가 되어 있습니다. 필요한 정보를 얻고 싶다면 지금 바로 대화를 시작해보세요!
