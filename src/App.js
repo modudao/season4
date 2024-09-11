@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Faucet from './components/Faucet';
@@ -11,10 +11,10 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/season3" element={<Faucet />} />
-        <Route path="/season3/chat" element={<Chatbot />} />
-        <Route path="/season3/nft" element={<Membership />} />
-        <Route path="/season3/vote" element={<Governanace />} />
+        <Route path="/" element={<Faucet />} />
+        <Route path="/chat" element={<Chatbot />} />
+        <Route path="/nft" element={<Membership />} />
+        <Route path="/vote" element={<Governanace />} />
       </Routes>
     </Router>
   );

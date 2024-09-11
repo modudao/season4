@@ -49,27 +49,27 @@ const Header = () => {
     <div className='modu-header'>
       <div className='modu-logo-wrapper'>
         <img className='modu-logo-image' style={{ width: 32, height: 32 }} src={logo} />
-        <Link to="/season3" className='modu-logo-text' style={{ textDecoration: 'none' }}>MODUDAO</Link>
+        <Link to="/" className='modu-logo-text' style={{ textDecoration: 'none' }}>MODUDAO</Link>
       </div>
       <div className='modu-menu-wrapper'>
         <div className='modu-menu-text-wrapper'>
           <Link
-            to="/season3/chat"
-            className={`modu-logo-text1 ${location.pathname === '/season3/chat' ? 'active-link' : ''}`}
+            to="/chat"
+            className={`modu-logo-text1 ${location.pathname === '/chat' ? 'active-link' : ''}`}
             style={{ textDecoration: 'none' }}
           >
             챗봇
           </Link>
           <Link
-            to="/season3/nft"
-            className={`modu-logo-text1 ${location.pathname === '/season3/nft' ? 'active-link' : ''}`}
+            to="/nft"
+            className={`modu-logo-text1 ${location.pathname === '/nft' ? 'active-link' : ''}`}
             style={{ textDecoration: 'none' }}
           >
             맴버십
           </Link>
           <Link
-            to="/season3/vote"
-            className={`modu-logo-text2 ${location.pathname === '/season3/vote' ? 'active-link' : ''}`}
+            to="/vote"
+            className={`modu-logo-text2 ${location.pathname === '/vote' ? 'active-link' : ''}`}
             style={{ textDecoration: 'none' }}
           >
             투표
