@@ -13,12 +13,13 @@ const Chatbot = () => {
   };
 
   const handleSubmit = async (event) => {
-    if (!loading) {
+    const storedAddress = localStorage.getItem('klipAddress');
+    if (storedAddress && inputValue != "" && !loading) {
       event.preventDefault();
       setLoading(true);
 
       try {
-        const response = await axios.post('https://ib9fm6yjjg.execute-api.ap-northeast-2.amazonaws.com/ctp/md-gpt', { prompt: inputValue });
+        const response = await axios.post('https://ib9fm6yjjg.execute-api.ap-northeast-2.amazonaws.com/ctp/md-gpt', { useraddress: storedAddress, prompt: inputValue });
         const data = await response.data;
 
         setApiResponse(data.message);
