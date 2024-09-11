@@ -13,6 +13,8 @@ function Governanace() {
   const [isSelectedGovernance1, setIsSelectedGovernance1] = useState(true);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [qrValue, setQrValue] = useState('');
+  const [hasVoted, setHasVoted] = useState(false);
+  const [hasJoined, setHasJoined] = useState(false);
   const [hasVotedGovernance1, setHasVotedGovernance1] = useState(false);
   const [hasVotedGovernance2, setHasVotedGovernance2] = useState(false);
   const [voteData, setVoteData] = useState("");
@@ -27,6 +29,42 @@ function Governanace() {
   const voteAbi = '{"inputs": [{"internalType": "uint256","name": "option","type": "uint256"}],"name": "vote","outputs": [],"stateMutability": "nonpayable","type": "function"}';
   const joinAbi = '{"inputs": [],"name": "join","outputs": [],"stateMutability": "nonpayable","type": "function"}';
   const nftAbi = [{
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "hasVoted",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "hasJoined",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
     "inputs": [],
     "name": "hasVotedGovernance1",
     "outputs": [
@@ -130,6 +168,7 @@ function Governanace() {
         if (userAdderss == '') {
           setHasVotedGovernance1(false);
         } else {
+          setHasVoted(await nftContract.hasVoted(userAdderss));
           const govStatus = await nftContract.hasVotedGovernance1();
           if (govStatus) {
             setHasVotedGovernance1(true);
@@ -146,6 +185,7 @@ function Governanace() {
             setHasVotedGovernance1(false);
           }
 
+          setHasJoined(await nftContract.hasJoined(userAdderss));
           const govStatus2 = await nftContract.hasVotedGovernance2();
           if (govStatus2) {
             setHasVotedGovernance2(true);
@@ -247,39 +287,41 @@ function Governanace() {
       from: localStorage.getItem('klipAddress'),
     };
 
-    // Step 2: Request the contract action through Klip
-    const { request_key } = await prepare.executeContract(transaction);
-    // const res = await axios.post(A2P_API_PREPARE_URL, {
-    //   bapp: { name: bappName, },
-    //   transaction,
-    //   type: "execute_contract",
-    // })
-    // const { request_key } = res.data;
+    if (!hasVoted) {
+      // Step 2: Request the contract action through Klip
+      const { request_key } = await prepare.executeContract(transaction);
+      // const res = await axios.post(A2P_API_PREPARE_URL, {
+      //   bapp: { name: bappName, },
+      //   transaction,
+      //   type: "execute_contract",
+      // })
+      // const { request_key } = res.data;
 
-    const userAgent = navigator.userAgent;
-    if (/Windows/i.test(userAgent) || /Macintosh/i.test(userAgent)) {
-      const qrURL = `https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
-      // window.open(qrURL, '_blank');
-      setQrValue(qrURL);
+      const userAgent = navigator.userAgent;
+      if (/Windows/i.test(userAgent) || /Macintosh/i.test(userAgent)) {
+        const qrURL = `https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
+        // window.open(qrURL, '_blank');
+        setQrValue(qrURL);
 
-      openModal();
-    } else {
-      request(request_key);
+        openModal();
+      } else {
+        request(request_key);
+      }
+
+      // Step 3: Poll for the result
+      // const interval = setInterval(() => {
+      //   getResult(request_key, (result) => {
+      //     if (result.err) {
+      //       console.error(result.err);
+      //       clearInterval(interval);
+      //       return;
+      //     }
+      //     if (result.result) {
+      //       clearInterval(interval);
+      //     }
+      //   });
+      // }, 1000);
     }
-
-    // Step 3: Poll for the result
-    // const interval = setInterval(() => {
-    //   getResult(request_key, (result) => {
-    //     if (result.err) {
-    //       console.error(result.err);
-    //       clearInterval(interval);
-    //       return;
-    //     }
-    //     if (result.result) {
-    //       clearInterval(interval);
-    //     }
-    //   });
-    // }, 1000);
   };
 
   const join = async () => {
@@ -295,39 +337,41 @@ function Governanace() {
       from: localStorage.getItem('klipAddress'),
     };
 
-    // Step 2: Request the contract action through Klip
-    const { request_key } = await prepare.executeContract(transaction);
-    // const res = await axios.post(A2P_API_PREPARE_URL, {
-    //   bapp: { name: bappName, },
-    //   transaction,
-    //   type: "execute_contract",
-    // })
-    // const { request_key } = res.data;
+    if (!hasJoined) {
+      // Step 2: Request the contract action through Klip
+      const { request_key } = await prepare.executeContract(transaction);
+      // const res = await axios.post(A2P_API_PREPARE_URL, {
+      //   bapp: { name: bappName, },
+      //   transaction,
+      //   type: "execute_contract",
+      // })
+      // const { request_key } = res.data;
 
-    const userAgent = navigator.userAgent;
-    if (/Windows/i.test(userAgent) || /Macintosh/i.test(userAgent)) {
-      const qrURL = `https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
-      // window.open(qrURL, '_blank');
-      setQrValue(qrURL);
+      const userAgent = navigator.userAgent;
+      if (/Windows/i.test(userAgent) || /Macintosh/i.test(userAgent)) {
+        const qrURL = `https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
+        // window.open(qrURL, '_blank');
+        setQrValue(qrURL);
 
-      openModal();
-    } else {
-      request(request_key);
+        openModal();
+      } else {
+        request(request_key);
+      }
+
+      // Step 3: Poll for the result
+      // const interval = setInterval(() => {
+      //   getResult(request_key, (result) => {
+      //     if (result.err) {
+      //       console.error(result.err);
+      //       clearInterval(interval);
+      //       return;
+      //     }
+      //     if (result.result) {
+      //       clearInterval(interval);
+      //     }
+      //   });
+      // }, 1000);
     }
-
-    // Step 3: Poll for the result
-    // const interval = setInterval(() => {
-    //   getResult(request_key, (result) => {
-    //     if (result.err) {
-    //       console.error(result.err);
-    //       clearInterval(interval);
-    //       return;
-    //     }
-    //     if (result.result) {
-    //       clearInterval(interval);
-    //     }
-    //   });
-    // }, 1000);
   };
 
   return (
@@ -411,8 +455,8 @@ function Governanace() {
                     <option value='사진9'>사진9</option>
                     <option value='사진10'>사진10</option>
                   </select>
-                  <button className='gov-image-select-button' onClick={voteImage}>
-                    <div className='gov-image-select-text'>투표</div>
+                  <button className={hasVoted ? 'gov-image-select-button-inactive' : 'gov-image-select-button'} onClick={voteImage}>
+                    <div className='gov-image-select-text'>{hasVoted ? "투표 완료" : "투표"}</div>
                   </button>
                   <Modal
                     isOpen={modalIsOpen}
@@ -452,8 +496,8 @@ function Governanace() {
                 <div className='gov-title-sub'>트레져리 물량을 분배해드립니다</div>
                 <div className='gov-title-sub2'>참여 안하신분들은 맴버쉽 구매에 사용하셨던 KLAY 그대로 돌려드립니다! <br /> <span style={{ fontWeight: 'bold' }}>참여한 사람 기준으로 컨트렉트 내에서 랜덤한 한명을 선택</span> 후 남은 KLAY 를 전송해드립니다! 랜덤한 사람을 추출하는 방식은 코드에 반영되어있어, 매우 투명하게 진행될꺼에요! </div>
                 <div className='gov-title-sub3'>*트레져리 물량: {treasuryBalance} KLAY</div>
-                <button className='gov-apply-button' onClick={join}>
-                  <div className='gov-image-select-text'>참여</div>
+                <button className={hasJoined ? 'gov-apply-button-inactive' : 'gov-apply-button'} onClick={join}>
+                  <div className='gov-image-select-text'>{hasJoined ? "참여 완료" : "참여"}</div>
                 </button>
                 <Modal
                   isOpen={modalIsOpen}
