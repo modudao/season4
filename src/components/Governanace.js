@@ -21,11 +21,13 @@ function Governanace() {
   const [voteRate, setVoteRate] = useState(0);
   const [winImage, setWinImage] = useState([]);
   const [treasuryBalance, setTreasuryBalance] = useState(0);
+  const [proposerNickname, setProposerNickname] = useState("");
   const [winnerNickname, setWinnerNickname] = useState("");
   const [joinRate, setJoinRate] = useState(0);
+  const [proposerAmount, setProposerAmount] = useState(0);
   const [winnerAmount, setWinnerAmount] = useState(0);
 
-  const nftAddress = "0x8BFe184A40A3b62d0f270578BA87886f55c1e98a";
+  const nftAddress = "0xdaa59a82A6191F3AE28a7E95513163Aa22098A97";
   const voteAbi = '{"inputs": [{"internalType": "uint256","name": "option","type": "uint256"}],"name": "vote","outputs": [],"stateMutability": "nonpayable","type": "function"}';
   const joinAbi = '{"inputs": [],"name": "join","outputs": [],"stateMutability": "nonpayable","type": "function"}';
   const nftAbi = [{
@@ -115,6 +117,18 @@ function Governanace() {
     "type": "function"
   }, {
     "inputs": [],
+    "name": "getProposerNickname",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
     "name": "getWinnerNickname",
     "outputs": [
       {
@@ -128,6 +142,18 @@ function Governanace() {
   }, {
     "inputs": [],
     "name": "participantCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }, {
+    "inputs": [],
+    "name": "proposerAmount",
     "outputs": [
       {
         "internalType": "uint256",
@@ -178,6 +204,8 @@ function Governanace() {
             const totalCount = Number(await nftContract.tokenCounter());
             const sum = data.reduce((acc, curr) => acc + curr, 0);
 
+            setProposerNickname(await nftContract.getProposerNickname());
+            setProposerAmount((await nftContract.proposerAmount()).toString() / 10 ** 18);
             setVoteRate(Math.round(sum / totalCount * 100));
             setWinImage(`사진${maxIndex + 1}`);
             setVoteData(data);
@@ -473,7 +501,7 @@ function Governanace() {
             ) : (
               <div className='voted-wrapper'>
                 <div className='gov-title-sub'>투표가 완료되었습니다. {winImage} 로 결정되었습니다.</div>
-                <div className='gov-title-sub2'>클립 지갑에서 다오랩 맴버십 NFT 사진이 변경되었는지 확인해보세요!</div>
+                <div className='gov-title-sub2'>제안자 {proposerNickname} 님께 {proposerAmount} KLAY 가 정상적으로 전송되었습니다. 클립 지갑에서 다오랩 맴버십 NFT 사진이 변경되었는지 확인해보세요!</div>
                 <div className='gov-title-sub3'>*투표율: {voteRate}%</div>
                 <div style={{ width: '293px', height: '293px' }}>
                   <Bar data={data} options={options} />
@@ -513,7 +541,7 @@ function Governanace() {
             ) : (
               <div className='voted-wrapper'>
                 <div className='gov-title-sub'>{winnerNickname} 님, 우승 축하드립니다</div>
-                <div className='gov-title-sub2'>다들 고생많으셨습니다! {winnerAmount} KLAY 멋지게 활용하시길 바라며, 다시 한 번 진심으로 축하드립니다!</div>
+                <div className='gov-title-sub2'>다들 고생많으셨습니다! 우승자 {winnerNickname} 님께 {winnerAmount} KLAY 전송 완료되었습니다. 다시 한 번 진심으로 축하드립니다!</div>
                 <div className='gov-title-sub3'>*참여율: {joinRate}%</div>
               </div>
             )}
