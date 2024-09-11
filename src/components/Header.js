@@ -47,10 +47,10 @@ const Header = () => {
 
   return (
     <div className='modu-header'>
-      <div className='modu-logo-wrapper'>
+      <Link to="/" className='modu-logo-wrapper' style={{ textDecoration: 'none' }}>
         <img className='modu-logo-image' style={{ width: 32, height: 32 }} src={logo} />
-        <Link to="/" className='modu-logo-text' style={{ textDecoration: 'none' }}>MODUDAO</Link>
-      </div>
+        <div className='modu-logo-text'>MODUDAO</div>
+      </Link>
       <div className='modu-menu-wrapper'>
         <div className='modu-menu-text-wrapper'>
           <Link
