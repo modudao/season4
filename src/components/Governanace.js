@@ -422,51 +422,51 @@ function Governanace() {
                 <div className='gov-title-sub2'>투표가 모두 완료되는 순간 클립 지갑에 있는 맴버십 사진이 변경됩니다!</div>
                 <div className='gov-image-wrapper'>
                   <div className='gov-image-wrapper-sub'>
-                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season3/daolabnft1.png"} />
+                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season4/daolabnft1.png"} />
                     <div className='gov-image-text'>사진1</div>
                   </div>
                   <div className='gov-image-wrapper-sub'>
-                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season3/daolabnft2.png"} />
+                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season4/daolabnft2.png"} />
                     <div className='gov-image-text'>사진2</div>
                   </div>
                 </div>
                 <div className='gov-image-wrapper'>
                   <div className='gov-image-wrapper-sub'>
-                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season3/daolabnft3.png"} />
+                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season4/daolabnft3.png"} />
                     <div className='gov-image-text'>사진3</div>
                   </div>
                   <div className='gov-image-wrapper-sub'>
-                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season3/daolabnft4.png"} />
+                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season4/daolabnft4.png"} />
                     <div className='gov-image-text'>사진4</div>
                   </div>
                 </div>
                 <div className='gov-image-wrapper'>
                   <div className='gov-image-wrapper-sub'>
-                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season3/daolabnft5.png"} />
+                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season4/daolabnft5.png"} />
                     <div className='gov-image-text'>사진5</div>
                   </div>
                   <div className='gov-image-wrapper-sub'>
-                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season3/daolabnft6.png"} />
+                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season4/daolabnft6.png"} />
                     <div className='gov-image-text'>사진6</div>
                   </div>
                 </div>
                 <div className='gov-image-wrapper'>
                   <div className='gov-image-wrapper-sub'>
-                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season3/daolabnft7.png"} />
+                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season4/daolabnft7.png"} />
                     <div className='gov-image-text'>사진7</div>
                   </div>
                   <div className='gov-image-wrapper-sub'>
-                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season3/daolabnft8.png"} />
+                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season4/daolabnft8.png"} />
                     <div className='gov-image-text'>사진8</div>
                   </div>
                 </div>
                 <div className='gov-image-wrapper'>
                   <div className='gov-image-wrapper-sub'>
-                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season3/daolabnft9.png"} />
+                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season4/daolabnft9.png"} />
                     <div className='gov-image-text'>사진9</div>
                   </div>
                   <div className='gov-image-wrapper-sub'>
-                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season3/daolabnft10.png"} />
+                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season4/daolabnft10.png"} />
                     <div className='gov-image-text'>사진10</div>
                   </div>
                 </div>
