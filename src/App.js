@@ -5,6 +5,7 @@ import Faucet from './components/Faucet';
 import Membership from './components/Membership';
 import Governanace from './components/Governanace';
 import Chatbot from './components/Chatbot';
+import Airdrop from './components/Airdrop';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/chat" element={<Chatbot />} />
         <Route path="/nft" element={<Membership />} />
         <Route path="/vote" element={<Governanace />} />
+        <Route path="/present" element={<Airdrop />} />
       </Routes>
     </Router>
   );
