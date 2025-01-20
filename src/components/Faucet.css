@@ -22,7 +22,7 @@
 }
 
 .faucet-button-input-text {
-  color: #2C71D2;
+  color: #7CB740;
   font-feature-settings: 'dlig' on;
   font-family: "Work Sans";
   font-size: 14px;
@@ -41,11 +41,11 @@
 
   border-color: transparent;
   border-radius: 12px;
-  background: #EAF5FF;
+  background: #FEFECF;
 }
 
 .faucet-button-input::placeholder {
-  color: #2C71D2;
+  color: #7CB740;
   font-feature-settings: 'dlig' on;
   font-family: "Work Sans";
   font-size: 14px;
@@ -78,7 +78,7 @@
 
   border-color: transparent;
   border-radius: 12px;
-  background: #38A0ED;
+  background: #7CB740;
 }
 
 .faucet-button-wrapper {
@@ -127,7 +127,7 @@
   gap: 10px;
 
   border-radius: 12px;
-  background: #EAF5FF;
+  background: #FEFECF;
 }
 
 .faucet-category-wrapper {
