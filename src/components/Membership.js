@@ -65,8 +65,7 @@ function Membership() {
   }
 
   useEffect(() => {
-    const provider = new ethers.JsonRpcProvider("https://public-en-cypress.klaytn.net");
-    // const provider = new ethers.JsonRpcProvider("https://klaytn.drpc.org");
+    const provider = new ethers.JsonRpcProvider("https://public-en.node.kaia.io");
     const nftContract = new ethers.Contract(nftAddress, nftAbi, provider);
 
     const checkMembershipStatus = async () => {

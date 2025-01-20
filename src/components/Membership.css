@@ -12,7 +12,7 @@
 }
 
 .membership-body-text-sub2 {
-  color: #2C71D2;
+  color: #7CB740;
   font-feature-settings: 'dlig' on;
   font-family: "Work Sans";
   font-size: 14px;
@@ -51,7 +51,7 @@
 
   border-color: transparent;
   border-radius: 12px;
-  background: #38A0ED;
+  background: #7CB740;
 }
 
 .membership-body-wrapper {
