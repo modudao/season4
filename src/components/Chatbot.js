@@ -10,6 +10,9 @@ const Chatbot = () => {
   const [apiResponse, setApiResponse] = useState(''); // API 응답값
   const [loading, setLoading] = useState(false); // 로딩 상태
 
+  // 비밀링크
+  const [isFind, setIsFind] = useState(false); // 로딩 상태
+
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
@@ -19,12 +22,22 @@ const Chatbot = () => {
     if (storedAddress && inputValue != "" && !loading) {
       event.preventDefault();
       setLoading(true);
+      setApiResponse("");
+
+      // 비밀링크
+      setIsFind(false);
 
       try {
         const response = await axios.post('https://ib9fm6yjjg.execute-api.ap-northeast-2.amazonaws.com/ctp/md-gpt', { useraddress: storedAddress, prompt: inputValue });
         const data = await response.data;
 
         setApiResponse(data.message);
+
+        // 비밀링크
+        if (data.message.includes("present")) {
+          setIsFind(true);
+        }
+
       } catch (error) {
         setApiResponse('API 호출 중 오류가 발생했습니다.');
       } finally {
@@ -66,7 +79,11 @@ const Chatbot = () => {
           <div className='chatbot-answer-wrapper'>
             <div className='chatbot-answer-text'>답변</div>
             <div className='chatbot-answer-box'>
-              <div className='chatbot-answer-text'>{apiResponse}</div>
+              {!isFind ? (
+                <div className='chatbot-answer-text'>{apiResponse}</div>
+              ) : (
+                <a href="https://modudao.github.io/season4/#/present" className='chatbot-answer-text'>이벤트 참여하러가기</a>
+              )}
             </div>
           </div>
         </div>
