@@ -263,11 +263,12 @@ function Governanace() {
   };
 
   const data = {
-    labels: ['사진1', '사진2', '사진3', '사진4', '사진5', '사진6', '사진7', '사진8', '사진9', '사진10'],
+    labels: ['사진1', '사진2', '사진3', '사진4', '사진5', '사진6', '사진7', '사진8', '사진9'],
     datasets: [
       {
         data: voteData,
-        backgroundColor: ['blue', 'yellow', 'green', 'orange', 'red', 'cyan', 'magenta', 'brown', 'purple', 'black'],
+        // backgroundColor: ['blue', 'yellow', 'green', 'orange', 'red', 'cyan', 'magenta', 'brown', 'purple', 'black'],
+        backgroundColor: ['blue', 'yellow', 'green', 'orange', 'red', 'cyan', 'magenta', 'brown', 'purple'],
       },
     ],
   };
@@ -303,8 +304,6 @@ function Governanace() {
       params = '[7]';
     } else if (selectedImage == '사진9') {
       params = '[8]';
-    } else if (selectedImage == '사진10') {
-      params = '[9]';
     }
 
     // Step 1: Prepare the contract action
@@ -467,10 +466,6 @@ function Governanace() {
                     <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season4/daolabnft9.png"} />
                     <div className='gov-image-text'>사진9</div>
                   </div>
-                  <div className='gov-image-wrapper-sub'>
-                    <img className='gov-image' style={{ width: 143, height: 143 }} src={"https://raw.githubusercontent.com/modudao/images/main/season4/daolabnft10.png"} />
-                    <div className='gov-image-text'>사진10</div>
-                  </div>
                 </div>
                 <div className='gov-image-select-wrapper'>
                   <select className='gov-image-select' value={selectedImage} onChange={handleChange}>
@@ -483,7 +478,6 @@ function Governanace() {
                     <option value='사진7'>사진7</option>
                     <option value='사진8'>사진8</option>
                     <option value='사진9'>사진9</option>
-                    <option value='사진10'>사진10</option>
                   </select>
                   <button className={hasVoted ? 'gov-image-select-button-inactive' : 'gov-image-select-button'} onClick={voteImage}>
                     <div className='gov-image-select-text'>{hasVoted ? "투표 완료" : "투표"}</div>
