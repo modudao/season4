@@ -37,7 +37,7 @@ const Faucet = () => {
       {!isClaimed ? (
         <div className='faucet-body-wrapper'>
           <div className='faucet-body-text'>닉네임을 입력하세요</div>
-          <div className='faucet-body-text-sub'>모두다오에 오신걸 환영합니다! 닉네임 입력 후 KLAY를 받아가세요!</div>
+          <div className='faucet-body-text-sub'>모두다오에 오신걸 환영합니다! 닉네임 입력 후 KAIA 를 받아가세요!</div>
           <div className='faucet-button-wrapper'>
             <input className='faucet-button-input' type='text' placeholder='1자 이상을 입력하세요' onChange={handleInputChange}>
             </input>

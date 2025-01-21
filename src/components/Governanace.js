@@ -502,7 +502,7 @@ function Governanace() {
             ) : (
               <div className='voted-wrapper'>
                 <div className='gov-title-sub'>투표가 완료되었습니다. {winImage} 로 결정되었습니다.</div>
-                <div className='gov-title-sub2'>제안자 {proposerNickname} 님께 {proposerAmount} KLAY 가 정상적으로 전송되었습니다. 클립 지갑에서 다오랩 맴버십 NFT 사진이 변경되었는지 확인해보세요!</div>
+                <div className='gov-title-sub2'>제안자 {proposerNickname} 님께 {proposerAmount} KAIA 가 정상적으로 전송되었습니다. 클립 지갑에서 다오랩 맴버십 NFT 사진이 변경되었는지 확인해보세요!</div>
                 <div className='gov-title-sub3'>*투표율: {voteRate}%</div>
                 <div style={{ width: '293px', height: '293px' }}>
                   <Bar data={data} options={options} />
@@ -523,8 +523,8 @@ function Governanace() {
             {!hasVotedGovernance2 ? (
               <div className='voted-wrapper'>
                 <div className='gov-title-sub'>트레져리 물량을 분배해드립니다</div>
-                <div className='gov-title-sub2'>참여 안하신분들은 맴버쉽 구매에 사용하셨던 KLAY 그대로 돌려드립니다! <br /> <span style={{ fontWeight: 'bold' }}>참여한 사람 기준으로 컨트렉트 내에서 랜덤한 한명을 선택</span> 후 남은 KLAY 를 전송해드립니다! 랜덤한 사람을 추출하는 방식은 코드에 반영되어있어, 매우 투명하게 진행될꺼에요! </div>
-                <div className='gov-title-sub3'>*트레져리 물량: {treasuryBalance} KLAY</div>
+                <div className='gov-title-sub2'>참여 안하신분들은 맴버쉽 구매에 사용하셨던 KAIA 그대로 돌려드립니다! <br /> <span style={{ fontWeight: 'bold' }}>참여한 사람 기준으로 컨트렉트 내에서 랜덤한 한명을 선택</span> 후 남은 KAIA 를 전송해드립니다! 랜덤한 사람을 추출하는 방식은 코드에 반영되어있어, 매우 투명하게 진행될꺼에요! </div>
+                <div className='gov-title-sub3'>*트레져리 물량: {treasuryBalance} KAIA</div>
                 <button className={hasJoined ? 'gov-apply-button-inactive' : 'gov-apply-button'} onClick={join}>
                   <div className='gov-image-select-text'>{hasJoined ? "참여 완료" : "참여"}</div>
                 </button>
@@ -542,7 +542,7 @@ function Governanace() {
             ) : (
               <div className='voted-wrapper'>
                 <div className='gov-title-sub'>{winnerNickname} 님, 우승 축하드립니다</div>
-                <div className='gov-title-sub2'>다들 고생많으셨습니다! 우승자 {winnerNickname} 님께 {winnerAmount} KLAY 전송 완료되었습니다. 다시 한 번 진심으로 축하드립니다!</div>
+                <div className='gov-title-sub2'>다들 고생많으셨습니다! 우승자 {winnerNickname} 님께 {winnerAmount} KAIA 전송 완료되었습니다. 다시 한 번 진심으로 축하드립니다!</div>
                 <div className='gov-title-sub3'>*참여율: {joinRate}%</div>
               </div>
             )}
