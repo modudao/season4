@@ -6,6 +6,8 @@ import { ethers } from 'ethers';
 import QRCode from 'qrcode.react';
 import Modal from 'react-modal';
 
+import addresses from '../config/addresses.json';
+
 import './Governanace.css';
 
 function Governanace() {
@@ -27,7 +29,7 @@ function Governanace() {
   const [proposerAmount, setProposerAmount] = useState(0);
   const [winnerAmount, setWinnerAmount] = useState(0);
 
-  const nftAddress = "0xdaa59a82A6191F3AE28a7E95513163Aa22098A97";
+  const nftAddress = addresses.membershipNft;
   const voteAbi = '{"inputs": [{"internalType": "uint256","name": "option","type": "uint256"}],"name": "vote","outputs": [],"stateMutability": "nonpayable","type": "function"}';
   const joinAbi = '{"inputs": [],"name": "join","outputs": [],"stateMutability": "nonpayable","type": "function"}';
   const nftAbi = [{

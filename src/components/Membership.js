@@ -5,6 +5,9 @@ import QRCode from 'qrcode.react';
 import Modal from 'react-modal';
 
 import daolabnft from '../assets/daolabnft.png';
+
+import addresses from '../config/addresses.json';
+
 import './Membership.css';
 
 function Membership() {
@@ -13,7 +16,7 @@ function Membership() {
   const [isMembership, setIsMembership] = useState(false);
   const [memberMetadata, setMemberMetadata] = useState([]);
 
-  const nftAddress = "0xdaa59a82A6191F3AE28a7E95513163Aa22098A97";
+  const nftAddress = addresses.membershipNft;
   const mintAbi = '{"constant":false,"inputs":[],"name":"mint","outputs":[],"payable":true,"stateMutability":"payable","type":"function"}';
   const nftAbi = [{
     "inputs": [],

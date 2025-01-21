@@ -6,6 +6,9 @@ import Modal from 'react-modal';
 
 import present from '../assets/present.png';
 import soldOut from '../assets/end.png';
+
+import addresses from '../config/addresses.json';
+
 import './Airdrop.css';
 
 function Membership() {
@@ -16,8 +19,8 @@ function Membership() {
   const [totalSupply, setTotalSupply] = useState(0);
   const [memberMetadata, setMemberMetadata] = useState([]);
 
-  const rwaAddress = "0x39D2119205c741f4E197Fb7B79390E79aC824884";
-  const nftAddress = "0xdaa59a82A6191F3AE28a7E95513163Aa22098A97";
+  const rwaAddress = addresses.rwaNft;
+  const nftAddress = addresses.membershipNft;
   const mintAbi = '{"inputs":[],"name":"mint","outputs":[],"stateMutability": "nonpayable","type":"function"}';
   const nftAbi = [{
     "inputs": [],
