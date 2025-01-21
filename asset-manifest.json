@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/season4/static/css/main.aabd2a1b.css",
+    "main.js": "/season4/static/js/main.62ac3f1e.js",
+    "static/js/453.8566eefc.chunk.js": "/season4/static/js/453.8566eefc.chunk.js",
+    "static/media/end.png": "/season4/static/media/end.5e44b76a28165b32f226.png",
+    "static/media/daolabnft.png": "/season4/static/media/daolabnft.b07338f7f7a24cec2de3.png",
+    "static/media/present.png": "/season4/static/media/present.7c22c3d89fe17837943c.png",
+    "static/media/smile.png": "/season4/static/media/smile.b94d51aeaaab104a3e05.png",
+    "static/media/logo.png": "/season4/static/media/logo.1b1cb015d95f9b540ffb.png",
+    "index.html": "/season4/index.html",
+    "main.aabd2a1b.css.map": "/season4/static/css/main.aabd2a1b.css.map",
+    "main.62ac3f1e.js.map": "/season4/static/js/main.62ac3f1e.js.map",
+    "453.8566eefc.chunk.js.map": "/season4/static/js/453.8566eefc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aabd2a1b.css",
+    "static/js/main.62ac3f1e.js"
+  ]
+}
