@@ -3,6 +3,9 @@ import { prepare, getResult } from 'klip-sdk';
 import axios from 'axios';
 
 import smile from '../assets/smile.png';
+
+import storage from '../config/localstorage.json';
+
 import './Faucet.css';
 
 const Faucet = () => {
@@ -15,7 +18,7 @@ const Faucet = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const storedAddress = localStorage.getItem('klipAddress');
+    const storedAddress = localStorage.getItem(storage.klip);
     if (storedAddress && userName != "") {
       const postParams = { "username": userName, "useraddress": storedAddress };
       // console.log("postParams", postParams);

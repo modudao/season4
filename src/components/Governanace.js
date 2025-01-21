@@ -7,6 +7,7 @@ import QRCode from 'qrcode.react';
 import Modal from 'react-modal';
 
 import addresses from '../config/addresses.json';
+import storage from '../config/localstorage.json';
 
 import './Governanace.css';
 
@@ -189,7 +190,7 @@ function Governanace() {
 
     const checkVotedStatus = async () => {
       try {
-        const userAdderss = localStorage.getItem('klipAddress');
+        const userAdderss = localStorage.getItem(storage.klip);
         setTreasuryBalance((await provider.getBalance(nftAddress)).toString() / 10 ** 18);
 
         if (userAdderss == '') {
@@ -313,7 +314,7 @@ function Governanace() {
       abi: voteAbi,
       value: '0',
       params,
-      from: localStorage.getItem('klipAddress'),
+      from: localStorage.getItem(storage.klip),
     };
 
     if (!hasVoted) {
@@ -363,7 +364,7 @@ function Governanace() {
       abi: joinAbi,
       value: '0',
       params: '[]',
-      from: localStorage.getItem('klipAddress'),
+      from: localStorage.getItem(storage.klip),
     };
 
     if (!hasJoined) {

@@ -7,6 +7,7 @@ import Modal from 'react-modal';
 import daolabnft from '../assets/daolabnft.png';
 
 import addresses from '../config/addresses.json';
+import storage from '../config/localstorage.json';
 
 import './Membership.css';
 
@@ -73,7 +74,7 @@ function Membership() {
 
     const checkMembershipStatus = async () => {
       try {
-        const userAdderss = localStorage.getItem('klipAddress');
+        const userAdderss = localStorage.getItem(storage.klip);
         if (userAdderss == '') {
           setIsMembership(false);
         } else {
@@ -116,7 +117,7 @@ function Membership() {
       abi: mintAbi,
       value: '10' + '0'.repeat(18),
       params: '[]',
-      from: localStorage.getItem('klipAddress'),
+      from: localStorage.getItem(storage.klip),
     };
 
     // Step 2: Request the contract action through Klip

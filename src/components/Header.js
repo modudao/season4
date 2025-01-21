@@ -3,6 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import { prepare, getResult } from 'klip-sdk';
 
 import logo from '../assets/logo.png';
+
+import storage from '../config/localstorage.json';
+
 import './Header.css';
 
 const Header = () => {
@@ -14,7 +17,7 @@ const Header = () => {
 
   useEffect(() => {
     // 컴포넌트 로드 시 로컬 스토리지에서 주소를 읽어 상태를 복원
-    const storedAddress = localStorage.getItem('klipAddress');
+    const storedAddress = localStorage.getItem(storage.klip);
     if (storedAddress) {
       setAddress(storedAddress);
       setShortedAddress(storedAddress.slice(0, 4) + '...' + storedAddress.slice(-2));

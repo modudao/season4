@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import storage from '../config/localstorage.json';
+
 import './Chatbot.css';
 
 const Chatbot = () => {
@@ -13,7 +15,7 @@ const Chatbot = () => {
   };
 
   const handleSubmit = async (event) => {
-    const storedAddress = localStorage.getItem('klipAddress');
+    const storedAddress = localStorage.getItem(storage.klip);
     if (storedAddress && inputValue != "" && !loading) {
       event.preventDefault();
       setLoading(true);
