@@ -1,4 +1,4 @@
-.membership-body-text-sub {
+.airdrop-body-text-sub {
   width: 259px;
 
   color: #1C140D;
@@ -11,7 +11,7 @@
   /* 150% */
 }
 
-.membership-body-text-sub2 {
+.airdrop-body-text-sub2 {
   color: #7CB740;
   font-feature-settings: 'dlig' on;
   font-family: "Work Sans";
@@ -22,7 +22,7 @@
   /* 150% */
 }
 
-.membership-body-text-sub3 {
+.airdrop-body-text-sub3 {
   color: red;
   font-feature-settings: 'dlig' on;
   font-family: "Work Sans";
@@ -33,7 +33,7 @@
   /* 150% */
 }
 
-.membership-body-text-sub2-wrapper {
+.airdrop-body-text-sub2-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -46,7 +46,7 @@
   background: lightgray 50% / cover no-repeat;
 }
 
-.membership-body-text {
+.airdrop-body-text {
   color: #000;
   font-feature-settings: 'dlig' on;
   font-family: "Work Sans";
@@ -58,7 +58,7 @@
   letter-spacing: -1.584px;
 }
 
-.membership-button {
+.airdrop-button {
   display: flex;
   width: 259px;
   height: 46px;
@@ -73,7 +73,7 @@
   background: #7CB740;
 }
 
-.membership-button-inactive {
+.airdrop-button-inactive {
   display: flex;
   width: 259px;
   height: 46px;
@@ -88,14 +88,14 @@
   background: #dddddd;
 }
 
-.membership-body-wrapper {
+.airdrop-body-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
 }
 
-.membership-body {
+.airdrop-body {
   display: flex;
   padding-top: 40px;
   flex-direction: column;
@@ -103,7 +103,7 @@
   gap: 10px;
 }
 
-.membership-body-text-sub-success {
+.airdrop-body-text-sub-success {
   width: 339px;
 
   color: #1C140D;
@@ -116,7 +116,7 @@
   /* 150% */
 }
 
-.membership-nft-text {
+.airdrop-nft-text {
   color: #1C140D;
   font-feature-settings: 'dlig' on;
   font-family: "Work Sans";
@@ -127,13 +127,13 @@
   /* 150% */
 }
 
-.membership-member-wrapper {
+.airdrop-member-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.membership-member-body {
+.airdrop-member-body {
   display: flex;
   flex-wrap: wrap;
   width: 341px;

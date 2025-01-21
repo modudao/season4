@@ -164,23 +164,23 @@ function Membership() {
   };
 
   return (
-    <div className='membership-body'>
+    <div className='airdrop-body'>
       {totalSupply < 3 ? (
         // {totalSupply < 1 ? (
-        <div className='membership-body-wrapper'>
-          <div className='membership-body-text'>머플러를 받아가세요!</div>
+        <div className='airdrop-body-wrapper'>
+          <div className='airdrop-body-text'>머플러를 받아가세요!</div>
           <img className='modu-nft-image' style={{ width: 259, height: 259 }} src={present} />
-          <div className='membership-body-text-sub'>따듯한 겨울을 위한 특별 선물! 맴버십 회원 <span style={{ fontWeight: 'bold' }}>선착순 3명</span>에게 패딩 목도리를 드립니다. 받기 버튼을 눌러 RWA NFT를 소유하고 실물 목도리를 받아보세요. 서두르세요, 수량이 한정되어 있습니다!</div>
+          <div className='airdrop-body-text-sub'>따듯한 겨울을 위한 특별 선물! 맴버십 회원 <span style={{ fontWeight: 'bold' }}>선착순 3명</span>에게 패딩 목도리를 드립니다. 받기 버튼을 눌러 RWA NFT를 소유하고 실물 목도리를 받아보세요. 서두르세요, 수량이 한정되어 있습니다!</div>
           {isMembership ? (
-            <div className='membership-body-text-sub2-wrapper'>
-              <div className='membership-body-text-sub2'>*남은 인원: {3 - totalSupply.toString()}명</div>
-              <button className={isPurchase ? 'membership-button-inactive' : 'membership-button'} onClick={mintNFT}>
+            <div className='airdrop-body-text-sub2-wrapper'>
+              <div className='airdrop-body-text-sub2'>*남은 인원: {3 - totalSupply.toString()}명</div>
+              <button className={isPurchase ? 'airdrop-button-inactive' : 'airdrop-button'} onClick={mintNFT}>
                 <div className='faucet-button-text'>{isPurchase ? '받기 완료' : '받기'}</div>
               </button>
             </div>
           ) : (
-            <div className='membership-body-text-sub2-wrapper'>
-              <div className='membership-body-text-sub3'>*먼저 맴버십을 구매해주세요</div>
+            <div className='airdrop-body-text-sub2-wrapper'>
+              <div className='airdrop-body-text-sub3'>*먼저 맴버십을 구매해주세요</div>
             </div>)}
           <Modal
             isOpen={modalIsOpen}
@@ -189,16 +189,16 @@ function Membership() {
             overlayClassName="modal-overlay"
             contentLabel="QR Code Modal"
           >
-            <div className='membership-body-text'>QR 코드를 스캔하세요</div>
+            <div className='airdrop-body-text'>QR 코드를 스캔하세요</div>
             <QRCode value={qrValue} size={256} />
           </Modal>
         </div>
       ) : (
-        <div className='membership-body-wrapper'>
-          <div className='membership-body-text'>선착순 마감되었습니다</div>
+        <div className='airdrop-body-wrapper'>
+          <div className='airdrop-body-text'>선착순 마감되었습니다</div>
           <img className='modu-nft-image' style={{ width: 259, height: 259 }} src={soldOut} />
-          <div className='membership-body-text-sub'>축하합니다! <span style={{ fontWeight: 'bold' }}>{memberMetadata[0]}님, {memberMetadata[1]}님, {memberMetadata[2]}님</span> 선착순 이벤트에 당첨되셨습니다. 패딩 머플러를 곧 받아보실 수 있습니다. 참여해 주신 모든 분들께 감사드립니다!</div>
-          {/* <div className='membership-body-text-sub'>축하합니다! <span style={{ fontWeight: 'bold' }}>{memberMetadata[0]}님, {memberMetadata[0]}님, {memberMetadata[0]}님</span> 선착순 이벤트에 당첨되셨습니다. 패딩 머플러를 곧 받아보실 수 있습니다. 참여해 주신 모든 분들께 감사드립니다!</div> */}
+          <div className='airdrop-body-text-sub'>축하합니다! <span style={{ fontWeight: 'bold' }}>{memberMetadata[0]}님, {memberMetadata[1]}님, {memberMetadata[2]}님</span> 선착순 이벤트에 당첨되셨습니다. 패딩 머플러를 곧 받아보실 수 있습니다. 참여해 주신 모든 분들께 감사드립니다!</div>
+          {/* <div className='airdrop-body-text-sub'>축하합니다! <span style={{ fontWeight: 'bold' }}>{memberMetadata[0]}님, {memberMetadata[0]}님, {memberMetadata[0]}님</span> 선착순 이벤트에 당첨되셨습니다. 패딩 머플러를 곧 받아보실 수 있습니다. 참여해 주신 모든 분들께 감사드립니다!</div> */}
         </div>
       )}
     </div>
