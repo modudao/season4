@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/season4/static/css/main.aabd2a1b.css",
-    "main.js": "/season4/static/js/main.33dd2ba0.js",
+    "main.js": "/season4/static/js/main.b1949b15.js",
     "static/js/453.8566eefc.chunk.js": "/season4/static/js/453.8566eefc.chunk.js",
     "static/media/end.png": "/season4/static/media/end.5e44b76a28165b32f226.png",
     "static/media/daolabnft.png": "/season4/static/media/daolabnft.b07338f7f7a24cec2de3.png",
@@ -10,11 +10,11 @@
     "static/media/logo.png": "/season4/static/media/logo.1b1cb015d95f9b540ffb.png",
     "index.html": "/season4/index.html",
     "main.aabd2a1b.css.map": "/season4/static/css/main.aabd2a1b.css.map",
-    "main.33dd2ba0.js.map": "/season4/static/js/main.33dd2ba0.js.map",
+    "main.b1949b15.js.map": "/season4/static/js/main.b1949b15.js.map",
     "453.8566eefc.chunk.js.map": "/season4/static/js/453.8566eefc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aabd2a1b.css",
-    "static/js/main.33dd2ba0.js"
+    "static/js/main.b1949b15.js"
   ]
 }
