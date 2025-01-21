@@ -41,7 +41,7 @@ const Header = () => {
           setShortedAddress(walletAddress.slice(0, 4) + '...' + walletAddress.slice(-2));
           setIsConnected(true);
           // store local storage
-          localStorage.setItem('klipAddress', walletAddress);
+          localStorage.setItem(storage.klip, walletAddress);
           clearInterval(intervalId);
         }
       }, 1000);
