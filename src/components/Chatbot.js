@@ -19,31 +19,31 @@ const Chatbot = () => {
 
   const handleSubmit = async (event) => {
     const storedAddress = localStorage.getItem(storage.klip);
-    if (storedAddress && inputValue != "" && !loading) {
-      event.preventDefault();
-      setLoading(true);
-      setApiResponse("");
+    // if (storedAddress && inputValue != "" && !loading) {
+    //   event.preventDefault();
+    //   setLoading(true);
+    //   setApiResponse("");
 
-      // 비밀링크
-      setIsFind(false);
+    //   // 비밀링크
+    //   setIsFind(false);
 
-      try {
-        const response = await axios.post('https://ib9fm6yjjg.execute-api.ap-northeast-2.amazonaws.com/ctp/md-gpt', { useraddress: storedAddress, prompt: inputValue });
-        const data = await response.data;
+    //   try {
+    //     const response = await axios.post('https://ib9fm6yjjg.execute-api.ap-northeast-2.amazonaws.com/ctp/md-gpt', { useraddress: storedAddress, prompt: inputValue });
+    //     const data = await response.data;
 
-        setApiResponse(data.message);
+    //     setApiResponse(data.message);
 
-        // 비밀링크
-        if (data.message.includes("present")) {
-          setIsFind(true);
-        }
+    //     // 비밀링크
+    //     if (data.message.includes("present")) {
+    //       setIsFind(true);
+    //     }
 
-      } catch (error) {
-        setApiResponse('API 호출 중 오류가 발생했습니다.');
-      } finally {
-        setLoading(false);
-      }
-    }
+    //   } catch (error) {
+    //     setApiResponse('API 호출 중 오류가 발생했습니다.');
+    //   } finally {
+    //     setLoading(false);
+    //   }
+    // }
   };
 
   return (
